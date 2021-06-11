@@ -35,9 +35,11 @@ var hotel= new Object();
             var nomeSemana=['Domingo','Segunda','Terça','Quarta','Quinta','Sexta','Sábado'];
             var nomeMes=['Janeiro','Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'];
             var dataFutura= new Date(data.getTime()+ 1000*60*60*24*7);
-            var diaSemana= dataFutura.getDay();
-            var mes= nomeMes[dataFutura.getDate()];
-            var dataFuturaTela= diaSemana+', '+ dataFutura.getDate()+ ' de '+ mes+ ' de '+ dataFutura.getFullYear();
+            var diaSemana= nomeSemana[dataFutura.getDay()];
+            var dia= dataFutura.getDate();
+            var mes=nomeMes[dataFutura.getMonth()];
+
+            var dataFuturaTela= diaSemana+', '+ dia+ ' de '+ mes+ ' de '+ dataFutura.getFullYear();
             return dataFuturaTela;
 
         }
