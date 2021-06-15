@@ -57,5 +57,25 @@ var hotel= new Object();
         document.getElementById('dataAtual').textContent=dataAtual();
         document.getElementById('oferta').textContent=oferta();
     
+
+        document.forms[0].elements[0]= Select(); //deixa o campo selecionado.
+        
+
+        if (document.forms[0].elements[4]){
+            desabilitaCrianca();
+        }
+
+        function desabilitaCrianca() {
+            document.forms[0].elements[4];
+         return document.forms[0].elements[8].disabled=true;
+        }
+           
+           
+           /* if (document.forms[0].elements[4]) {
+                document.forms[0].elements[8].disabled =true
+            } else {
+                document.forms[0].elements[8].disabled =false
+            }*/
+        
    
 
