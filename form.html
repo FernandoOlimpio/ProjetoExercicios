@@ -35,7 +35,7 @@
                <label for="quarto">Tipo de quarto</label>
                <br>
 
-               <input type="radio" name="tipoQuarto" value="standard" checked>
+               <input type="radio" name="tipoQuarto" value="standard" id="standard" onclick="desabilitaCrianca()" checked>
                <label for="standard">Standard</label>
                <input type="radio" name="tipoQuarto" value="master">
                <label for="master">Master</label>
@@ -54,7 +54,7 @@
                 <br><br>
                 <label for="criancas"> Crianças</label>
                 <br>
-                <select name="criancas" >
+                <select name="criancas" id="listaCriancas">
                     <option value="zero" selected>0</option>
                     <option value="um">1</option>
                     <option value="dois">2</option>
