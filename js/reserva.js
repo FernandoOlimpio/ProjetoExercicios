@@ -81,20 +81,28 @@ var hotel= new Object();
             crianca.disabled=false; 
             
         }
-        /*if(document.getElementById('master')){ 
-        else if(document.getElementById('luxo')){
-                crianca= document.getElementById('listaCriancas');
-                crianca.disabled=false; 
-             }
-        }
+
+       
+        function cpfPadrao(){
+            var exp = /\d{3}\.\d{3}\.\d{3}-\d{2}/g;
+            var cpf = document.getElementById('cpf').value;
+            var cpf2 = cpf.replace(exp, function(inteiro, pos1,pos2,pos3,pos4){
+                return pos1+"."+pos2+"."+pos3+"-"+pos4;
+            });
+            
+            document.getElementById('resultadoCpf').value=cpf2; 
+        } 
+        
+        
+        
            
            
 
-           /* if (document.forms[0].elements[4]) {
-                document.forms[0].elements[8].disabled =true
-            } else {
-                document.forms[0].elements[8].disabled =false
-            }*/
         
-   
+/* var exp= /(\d{2})(\d{3})/g      expressão regular para padronizar
+var cpf = "02656556898"
+undefined
+exp.exec(cpf)
+(3) ["02656", "02", "656", index: 0, input: "02656556898", groups: undefined]
+  */ 
 
