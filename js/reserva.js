@@ -1,3 +1,5 @@
+// http://regexr.com/ site para testar expressoes regulares.
+
 var hotel= new Object();
     hotel.nome='Beira Mar',
     hotel.quartos=50,
@@ -61,16 +63,33 @@ var hotel= new Object();
         document.forms[0].elements[0]= Select(); //deixa o campo selecionado.
         
 
-        if (document.forms[0].elements[4]){
+      /* if (document.forms[0].elements[4]||document.forms[0].elements[5]||document.forms[0].elements[6]){
             desabilitaCrianca();
-        }
+        }*/
 
         function desabilitaCrianca() {
-            document.forms[0].elements[4];
-         return document.forms[0].elements[8].disabled=true;
+            if(document.getElementById('standard')){
+         crianca= document.getElementById('listaCriancas');
+         crianca.disabled=true;
+            }
+            
+        }
+
+        function habilitaCrianca() {
+            
+            crianca= document.getElementById('listaCriancas');
+            crianca.disabled=false; 
+            
+        }
+        /*if(document.getElementById('master')){ 
+        else if(document.getElementById('luxo')){
+                crianca= document.getElementById('listaCriancas');
+                crianca.disabled=false; 
+             }
         }
            
            
+
            /* if (document.forms[0].elements[4]) {
                 document.forms[0].elements[8].disabled =true
             } else {
