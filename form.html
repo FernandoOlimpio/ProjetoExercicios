@@ -6,11 +6,11 @@
        <link rel="stylesheet" href="css/style.css"> 
 
    </head>
-   <body style="background-image: url(img/Beira-Mar.png); width: 100%; height:100%;background-size: 100%; background-repeat: no-repeat;">
+   <body style="background-image: url(img/praia.jpg); width: 100%; height:100%; background-repeat: no-repeat;">
        <div>
            
-        <h1 style="font-size: 100px; position: relative;">Beira-Mar Hotel</h1>
-        <h2 style="position: relative;">Melhores momentos da vida!</h2>
+        <h1 style="font-size: 100px; position: relative; margin-top: -20px;">Beira-Mar Hotel</h1>
+        <h2 style="position: relative; margin-top: -50px;">Melhores momentos da vida!</h2>
        </div>
 
        <div style="background-color: black;opacity: 0.7; border-radius: 10%; width: 400px; height: 600px; margin-left: 38%; border-style: ridge;">
@@ -18,11 +18,11 @@
             <form id="form-contato" class="formulario">
                <label for="nome"> Nome</label>
                <br>
-               <input type="text" id="nome" name="nome"  placeholder="Nome completo" required> <!--required transforma o campo obrigatório-->
+               <input type="text" id="nome" name="nome"  placeholder="Nome completo" onblur="verificaNome()" required> <!--required transforma o campo obrigatório-->
                <br><br>
                <label for="cpf">CPF</label>
                <br>
-               <input type="text" id="cpf" name="cpf" onblur="cpfPadrao()" required>
+               <input type="text" id="cpf" name="cpf" required>
                <br><br>
                <label for="nascimento">Data de Nascimento</label>
                <br>
@@ -30,7 +30,11 @@
                <br><br>
                <label for="tel">Telefone</label>
                <br>
-               <input type="tel" id="tel" name="tel" placeholder="(xx)9xxxx-xxxx" maxlength="11" required> 
+               <input type="tel" id="tel" name="tel" placeholder="(xx)9xxxx-xxxx" onblur="mascaraTel()" required> 
+               <br><br>
+               <label for="email"> E-mail</label>
+               <br>
+               <input type="email" id="email" name="email" required> <!--required transforma o campo obrigatório-->
                <br><br>
                <label for="quarto">Tipo de quarto</label>
                <br>
@@ -90,7 +94,7 @@
                <button for="botaoEnviar">Enviar</button>
                <br>
 
-               <h2 id="resultadoCpf" onclick="cpfPadrao()" style="color: black;"> Teste</h2>
+               <h2 id="resultadoCpf" style="color: black;"> Teste</h2>
            </form>
 
            

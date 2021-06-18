@@ -82,20 +82,107 @@ var hotel= new Object();
             
         }
 
-       
-        function cpfPadrao(){
-            var exp = /\d{3}\.\d{3}\.\d{3}-\d{2}/g;
+        //Verificação do CPF e 
+        cpf = document.querySelector('#cpf');
+
+        cpf.addEventListener('blur', (evento)=>{           // função reduzida (parametro)=>{}
+            verificaCpf(evento.target);
+        })
+
+        function verificaCpf(input){
+            var expCpf= /(\d{3})(\d{3})(\d{3})(\d{2})/g;
+            var cpfVerificado = expCpf.exec(input.value);
+            var msgCpf = '';
+
+            if (!cpfVerificado) {
+                msgCpf = 'Digite apenas números.';
+
+            }
+
+            input.setCustomValidity(msgCpf);
+
+            input.value = formataCpf(input.value,expCpf);
+            
+        }
+
+            
+
+            function formataCpf(valorCpf, cpfExp) {
+                var cpfFormatado = valorCpf.replace(cpfExp, function(inteiro,pos1,pos2,pos3,pos4){
+                    return pos1+"."+pos2+"."+pos3+"-"+pos4;
+                })
+
+                return cpfFormatado;
+                
+            }
+
+        /*function cpfPadrao(){
+            var exp = /(\d{3})(\d{3})(\d{3})(\d{2})/g;
             var cpf = document.getElementById('cpf').value;
-            var cpf2 = cpf.replace(exp, function(inteiro, pos1,pos2,pos3,pos4){
+            var cpf2 = cpf.replace(exp, function(inteiro,pos1,pos2,pos3,pos4){
                 return pos1+"."+pos2+"."+pos3+"-"+pos4;
             });
             
-            document.getElementById('resultadoCpf').value=cpf2; 
+            document.getElementById('resultadoCpf').textContent= cpf2;
+            document.getElementById('cpf').value= cpf2; 
+
         } 
+        */
+
+        function mascaraTel(){
+            var expTel = /(\d{2})(\d{5})(\d{4})/g;
+            var tel = document.getElementById('tel').value;
+            var tel2 = tel.replace(expTel, function(inteiro, ddd, parte1, parte2){
+                return "("+ddd+")"+ parte1 + "-" + parte2;
+            });
+            document.getElementById('tel').value= tel2;
+        }
+
         
         
-        
+       var suiteEscolhida= [document.forms[0].elements[4], document.forms[0].elements[5], document.forms[0].elements[6]];
+       
+       for(var i=[0]; i < suiteEscolhida.length; i++){
+
+            suiteEscolhida[i].addEventListener('change', function(){
+                var almoco = document.forms[0].elements[12];
+                var jantar = document.forms[0].elements[13];
+
+            })
+       }
+
+
+       nome = document.getElementById('nome');
+
+       function verificaNome() {
+           var expNome = /^(^[0-9])(3,50)$/g;
+           var nomeVerificado = expNome.exec(nome.value);
+           var msgNome = '';
+
+           if(!nomeVerificado){
+               msgNome = 'O nome precisa ser completo e sem número.';
+           }
            
+           nome.setCustomValidity(msgNome);
+       }
+    
+
+        email = document.querySelector('#email');
+
+        email.addEventListener('blur', validaEmail(), false,);
+       function validaEmail() {
+           var expEmail = /^([\w_.]*)@([\w-.]*)\.([a-z.]){3,6}$/g;
+           var emailVerificado = expEmail.exec(email.value);
+           var msgEmail = '';
+
+           if (!emailVerificado) {
+               msgEmail = 'E-mail sem o formato válido.';
+               
+           }
+
+           email.setCustomValidity(msgEmail);
+           
+       }
            
 
         
