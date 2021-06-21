@@ -83,7 +83,7 @@ var hotel= new Object();
         }
 
         //Verificação do CPF e 
-        cpf = document.querySelector('#cpf');
+        cpf = document.getElementById('#cpf');
 
         cpf.addEventListener('blur', (evento)=>{           // função reduzida (parametro)=>{}
             verificaCpf(evento.target);
@@ -101,14 +101,15 @@ var hotel= new Object();
 
             input.setCustomValidity(msgCpf);
 
-            input.value = formataCpf(input.value,expCpf);
+            input = formataCpf(input.value,expCpf);
+            //input.value=formataCpf(Input.value,expCpf);
             
         }
 
             
 
             function formataCpf(valorCpf, cpfExp) {
-                var cpfFormatado = valorCpf.replace(cpfExp, function(inteiro,pos1,pos2,pos3,pos4){
+                var cpfFormatado = valorCpf.replace(cpfExp, function(vregex,pos1,pos2,pos3,pos4){
                     return pos1+"."+pos2+"."+pos3+"-"+pos4;
                 })
 
