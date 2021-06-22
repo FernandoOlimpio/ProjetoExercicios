@@ -1,0 +1,99 @@
+<!DOCTYPE html> 
+<html lang "pt-br">
+    <head>
+        <title></title>
+        <meta charset="utf8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous"> <!-- link para usar bootstrap na nuvem css-->
+
+    </head>
+    <body>
+        <main>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark" >
+                <a href="" class="navbar-brand">Sistema de Amparo Online</a>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Início</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Vantagens</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Amparo Online</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Contato</a>
+                    </li>
+                </ul>
+
+            </nav>
+
+            <div id="carrossel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                
+                <!--indicadores: Adiciona indicadores para o carrossel. Estes são os pequenos 
+                    pontos na parte inferior de cada slide (que indica quantos slides existem 
+                    no carrossel e qual slide o usuário está visualizando no momento-->
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carrossel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carrossel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carrossel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+
+                <div class="carousel-inner"> <!--adiciona slides ao carrossel-->
+                  <div class="carousel-item active" data-bs-interval="100"> <!--Especifica o conteúdo de cada slide-->
+                    <img src="img/banner-familia.jpg" class="d-block w-100" alt="grupo de mãos">
+                  </div>
+                  <div class="carousel-item" data-bs-interval="100">
+                    <img src="img/caridade1.jpg" class="d-block w-100" alt="banner simples">
+                  </div>
+                  <div class="carousel-item" data-bs-interval="100">
+                    <img src="img/maos.jpg" class="d-block w-100" alt="mãos dadas">
+                  </div>
+                </div>
+                
+                    <!--Controles-->
+                    <!--Adiciona um botão esquerdo (anterior) ao carrossel, que permite ao usuário 
+                    voltar entre os slides-->                  
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carrossel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+
+                      <!--Adiciona um botão direito (proximo) ao carrossel, que permite ao usuário 
+                    avançar entre os slides-->
+                      <button class="carousel-control-next" type="button" data-bs-target="#carrossel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                      </button>
+
+              </div>
+
+              <div class="container">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <img src="img/cari.jfif"  class="rounded-circle" width="140" height="140" alt="">
+                        <h2>Caridade</h2>
+                        <p>sadsdadhasdahdhauhdiauidhauisiuhadiuksjdakji <em>Amparo</em> </p>
+                        <p>
+                            <a href="#" class="btn-btn success">Saiba mais.</a>
+                        </p>
+
+                    </div>
+
+                    <div class="col-lg-4">
+
+                    </div>
+
+                    <div class="col-lg-4">
+
+                    </div>
+
+                </div>
+
+              </div>
+        </main>
+
+    </body>
