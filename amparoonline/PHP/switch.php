@@ -13,7 +13,7 @@
 
         <label for="">Candidato:</label>
         <select name="candidato">   
-            <option value="x">[Selecione]</option>
+            <option value="x">[Voto em Branco]</option>
             <option value="1">Sebastião</option>
             <option value="2">Raimundo</option>
             <option value="3">Joana</option>
@@ -22,34 +22,56 @@
 
     </form>
     
+      
+   
 </body>
 </html>
 
 
 <?php
 
+$sebastiao=0; $raimundo=0; $joana=0; $branco=0;
+        if (isset($_POST['voto'])){
+  
+            switch ($_POST['candidato']) {
+                  case '1': 
+                  echo "<h2> Você votou em: Sebastião </h2>";
+                  $sebastiao++;
+                  break;
+              
+                  case '2': 
+                      echo "<h2>Você votou em: Raimundo </h2>";
+                      $raimundo++;
+                      break;
+          
+                  case '3': 
+                      echo "<h2>Você votou em: Joana </h2>";
+                      $joana++;
+                      break;
+              
+                  default:
+                  echo "Voto em branco";
+                  $branco++;
+                  break;
+              }        
+      
+              
+          } 
+          echo $sebastiao;
+          echo $raimundo;
+          echo $joana;
+          echo $branco;
 
+        
 
-if (isset($_POST['voto'])){
     
-    switch ($_POST['candidato']) {
-        case ($_POST['candidato'] == 1): 
-        echo "<h2> Você voltou em: Sebastião </h2>";
-        # code...
-        break;
-    
-        case ($_POST['candidato'] == 2): 
-            echo "<h2>Você voltou em: Raimundo </h2>";
-            # code...
-            break;
-    
-        default:
-        echo "Voto em branco";
-        # code...
-        break;
-    }
 
 
+    
+
+
+
+    
     /*$idade = 25;
     switch ($idade) {
         case ($idade < 18): 
@@ -63,10 +85,10 @@ if (isset($_POST['voto'])){
             break;
     
         default:
-        echo "Está no limbro";
+        echo "Está no limbo";
         # code...
         break;
     }*/
-}
+
 
 ?>
