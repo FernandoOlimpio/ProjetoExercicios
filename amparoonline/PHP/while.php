@@ -8,19 +8,20 @@
 <body>
 
 <?php
-if (isset($_COOKIE[$cookie_c1])) {
-    setcookie($cookie_c1, "0");
-    setcookie($cookie_c2, "0");
-    setcookie($cookie_c3, "0");
-    setcookie($cookie_n, "0");
-    setcookie($cookie_contador, "1");
-    setcookie($cookie_vencedor, "0");
-    setcookie($cookie_x, "0");
+if (isset($_COOKIE["cookie_c1"])) {
+    setcookie("cookie_c1", 1);
+    setcookie("cookie_c2", 1);
+    setcookie("cookie_c3", 1);
+    setcookie("cookie_n", 1);
+    setcookie("cookie_contador", 1);
+    setcookie("cookie_vencedor", 0);
+    setcookie("cookie_x", 1);
    
 }
 
 do{
-$cookie_contador++;
+    $aux = $_COOKIE['cookie_contador']+1;
+setcookie("cookie_contador", $aux);
 
 ?>
 <form method="POST" action="">
@@ -39,49 +40,50 @@ $cookie_contador++;
 
 if (isset($_POST['voto'])){
 
-  
+    
     switch ($_POST['candidato']) {
           case '1': 
           echo "<h2> Você votou em: Sebastião </h2>";
-          setcookie($cookie_c1, ($_COOKIE($cookie_c1)+1));
+          setcookie("cookie_c1", ($_COOKIE['cookie_c1']+ 1));
           break;
       
           case '2': 
               echo "<h2>Você votou em: Raimundo </h2>";
-              setcookie($cookie_c1, ($_COOKIE($cookie_c2)+1));
+              setcookie("cookie_c2", ($_COOKIE['cookie_c2']+ 1));
               break;
   
           case '3': 
               echo "<h2>Você votou em: Joana </h2>";
-              setcookie($cookie_c1, ($_COOKIE($cookie_c3)+1));
+              setcookie("cookie_c3", ($_COOKIE['cookie_c3']+ 1));
               break;
       
           default:
           echo "Voto em branco";
-          setcookie($cookie_c1, ($_COOKIE($cookie_n)+1));
+          setcookie("cookie_n", ($_COOKIE['cookie_n']+ 1));
           break;
       }  
     } 
 
-    }while ($_COOKIE[$cookie_contador] < 5);
+    }while ($_COOKIE["cookie_contador"] < 5);
         
-            if ($_COOKIE[$cookie_vencedor] <= $_COOKIE[$cookie_c1]) {
-               setcookie($cookie_vencedor, $_COOKIE[$cookie_c1]);
+            if ($_COOKIE["cookie_vencedor"] = $_COOKIE["cookie_c1"]) {
+               setcookie("cookie_vencedor", $_COOKIE["cookie_c1"]);
                 $nomeVencedor =  "Sebastião";
             }
-            if ($_COOKIE[$cookie_vencedor] <= $_COOKIE[$cookie_c2]) {
-                setcookie($cookie_vencedor, $_COOKIE[$cookie_c2]);
+            if ($_COOKIE["cookie_vencedor"] = $_COOKIE["cookie_c2"]) {
+                setcookie("cookie_vencedor", $_COOKIE["cookie_c2"]);
                 $nomeVencedor =  "Raimundo";
             }
-            if ($_COOKIE[$cookie_vencedor] <= $_COOKIE[$cookie_c3]) {
-                setcookie($cookie_vencedor, $_COOKIE[$cookie_c3]);
+            if ($_COOKIE["cookie_vencedor"] = $_COOKIE["cookie_c3"]) {
+                setcookie("cookie_vencedor", $_COOKIE["cookie_c3"]);
                 $nomeVencedor =  "Joana";
             }
+            
         
 
-        echo "<br> Sindico eleito: $_COOKIE[$nomeVencedor], com $_COOKIE[$cookie_vencedor] votos.";
-        echo "<br> Votos Brancos: $_COOKIE[$cookie_n]";
-        echo "<br> Fim!"
+        echo "<br> Sindico eleito: $nomeVencedor, com " .$_COOKIE['cookie_vencedor']. " votos.";
+        echo "<br> Votos Brancos:" .$_COOKIE['cookie_n'];
+        echo "<br> Fim!";
 
 
 ?>
